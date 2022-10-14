@@ -60,6 +60,10 @@ button, button:focus {
   background: #FFD289;
 }
 
+.color-silver-bg {
+  background: #C0C0C0;
+}
+
 /* top sale template */
 #top-sale .owl-carousel .item .product a {
   overflow: hidden;

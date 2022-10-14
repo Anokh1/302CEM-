@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- start #header -->
+        <header id="header">
+            <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
+                <p class="font-rale font-size-12 text-black-50 m-0">Group 11 INTI International College Penang</p>
+                <div class="font-rale font-size-14">
+                    <a href="#" class="px-3 border-right border-left text-dark">Login</a>
+                    <a href="#" class="px-3 border-right border-left text-dark">Wishlist (0)</a>
+                </div>
+            </div>
+            <!--<nav class="navbar navbar-expand-lg bg-light"></nav>-->
+            <!-- Primary Navigation -->
+            <nav class="navbar navbar-expand-lg color-primary-bg">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Agile Laptop</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav m-auto font-rubik">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">On Sales</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Category</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Products<i class="fas fa-chevron-down"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Category</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Coming Soon</a>
+                      </li>                      
+                    </ul>
+                    <form action="#" class="font-size-14 font-rale">
+                        <a href="#" class="py-2 rounded-pill color-primary-bg">
+                            <!-- Shopping Cart icon not working -->
+                            <span class="font-size-16 px-2 text-white"><i class="fa-solid fa-cart-shopping"></i></span>
+                            <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
+                        </a>
+                    </form>
+                  </div>
+                </div>
+            </nav>
+            <!-- !Primmary Navigation -->
+
+        </header>
+    <!-- !start #header -->
+
+    <!-- start #main -->
+        <main id="main-site"> 
+            
+            <!-- Shopping cart section  -->
+                <section id="cart" class="py-3">
+                    <div class="container-fluid w-75">
+                        <h5 class="font-baloo font-size-20">Shopping Cart</h5>
+
+                        <!--  shopping cart items   -->
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    <!-- cart item -->
+                                        <div class="row border-top py-3 mt-3">
+                                            <div class="col-sm-2">
+                                                <img src="./assets/products/1.PNG" style="height: 90px;" alt="cart1" class="img-fluid">
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <h5 class="font-baloo font-size-20">Dell Inspiron 14 2-in-1</h5>
+                                                <small>by Dell</small>
+                                                <!-- product rating -->
+                                                <div class="d-flex">
+                                                    <div class="rating text-warning font-size-12">
+                                                        <span><i class="fas fa-star"></i></span>
+                                                        <span><i class="fas fa-star"></i></span>
+                                                        <span><i class="fas fa-star"></i></span>
+                                                        <span><i class="fas fa-star"></i></span>
+                                                        <span><i class="far fa-star"></i></span>
+                                                    </div>
+                                                    <a href="#" class="px-2 font-rale font-size-14">10 ratings</a>
+                                                </div>
+                                                <!--  !product rating-->
+
+                                                <!-- product qty -->
+                                                    <div class="qty d-flex pt-2">
+                                                        <div class="d-flex font-rale w-25">
+                                                            <button class="qty-up border bg-light" data-id="pro1"><i class="fas fa-angle-up"></i></button>
+                                                            <input type="text" data-id="pro1" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                                                            <button data-id="pro1" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                                        </div>
+                                                        <button type="submit" class="btn font-baloo text-danger px-3 border-right">Delete</button>
+                                                        <button type="submit" class="btn font-baloo text-danger">Save for Later</button> <!-- not necessary -->
+                                                    </div>
+                                                <!-- !product qty -->
+
+                                            </div>
+
+                                            <div class="col-sm-2 text-right">
+                                                <div class="font-size-20 text-danger font-baloo">
+                                                    $<span class="product_price">70.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- !cart item -->
+
+                                    <!-- cart item -->
+                                    <div class="row border-top py-3 mt-3">
+                                        <div class="col-sm-2">
+                                            <img src="./assets/products/2.PNG" style="height: 90px;" alt="cart1" class="img-fluid">
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <h5 class="font-baloo font-size-20">Asus ZenBook 17 Fold OLED UX9702</h5>
+                                            <small>by Asus</small>
+                                            <!-- product rating -->
+                                            <div class="d-flex">
+                                                <div class="rating text-warning font-size-12">
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="fas fa-star"></i></span>
+                                                    <span><i class="far fa-star"></i></span>
+                                                </div>
+                                                <a href="#" class="px-2 font-rale font-size-14">11 ratings</a>
+                                            </div>
+                                            <!--  !product rating-->
+
+                                            <!-- product qty -->
+                                                <div class="qty d-flex pt-2">
+                                                    <div class="d-flex font-rale w-25">
+                                                        <button class="qty-up border bg-light" data-id="pro2"><i class="fas fa-angle-up"></i></button>
+                                                        <input type="text" data-id="pro2" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                                                        <button data-id="pro2" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                                    </div>
+                                                    <button type="submit" class="btn font-baloo text-danger px-3 border-right">Delete</button>
+                                                    <button type="submit" class="btn font-baloo text-danger">Save for Later</button>
+                                                </div>
+                                            <!-- !product qty -->
+
+                                        </div>
+
+                                        <div class="col-sm-2 text-right">
+                                            <div class="font-size-20 text-danger font-baloo">
+                                                $<span class="product_price">100.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- !cart item -->
+                                </div>
+
+                                <!-- subtotal section-->
+                                <div class="col-sm-3">
+                                    <div class="sub-total border text-center mt-2">
+                                        <h6 class="font-size-12 font-rale text-success py-3"><i class="fas fa-check"></i> Your order is eligible for FREE Delivery.</h6>
+                                        <div class="border-top py-4">
+                                            <h5 class="font-baloo font-size-20">Subtotal (2 item):&nbsp; <span class="text-danger">$<span class="text-danger" id="deal-price">170.00</span> </span> </h5>
+                                            <button type="submit" class="btn btn-warning mt-3">Checkout</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- !subtotal section-->
+                            </div>
+                        <!--  !shopping cart items   -->
+                    </div>
+                </section>
+            <!-- !Shopping cart section  -->            
+
+            <!-- New Laptops -->
+            <section id="new-laptops">
+                <div class="container py-5">
+                    <h4 class="font-rubik font-size-20">New Laptops</h4>
+                    <hr>
+                    <!-- Owl Carousel -->
+                <div class="owl-carousel owl-theme">
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <a href="#"><img src="./assets/products/1.png" alt="product1" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>Dell Inspiron 14 2-in-1</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$70</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <!-- image sizing issue -->
+                            <a href="#"><img src="./assets/products/2.png" alt="product2" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>Asus Zenbook 17 Fold OLED UX9702</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$100</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <!-- image sizing issue -->
+                            <a href="#"><img src="./assets/products/3.png" alt="product2" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>MacBook Air M1</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$80</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <!-- image sizing issue -->
+                            <a href="#"><img src="./assets/products/4.png" alt="product2" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>HP Pavilion Laptop 14-DV2028TU</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$80</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <!-- image sizing issue -->
+                            <a href="#"><img src="./assets/products/5.png" alt="product2" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>Acer Nitro 5 Intel Core i7-11800H 8-Core H45 Processor</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$90</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <a href="#"><img src="./assets/products/6.png" alt="product1" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>MacBook Air M2</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$85</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repeating Products (need to change) -->
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <!-- image sizing issue -->
+                            <a href="#"><img src="./assets/products/2.png" alt="product2" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>Asus Zenbook 17 Fold OLED UX9702</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$100</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <!-- image sizing issue -->
+                            <a href="#"><img src="./assets/products/3.png" alt="product2" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>MacBook Air M1</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$80</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <!-- image sizing issue -->
+                            <a href="#"><img src="./assets/products/4.png" alt="product2" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>HP Pavilion Laptop 14-DV2028TU</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$80</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item py-2 bg-light">
+                        <div class="product font-rale">
+                            <!-- image sizing issue -->
+                            <a href="#"><img src="./assets/products/5.png" alt="product2" class="img-fluid"></a>
+                            <div class="text-center">
+                                <h6>Acer Nitro 5 Intel Core i7-11800H 8-Core H45 Processor</h6>
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                                <div class="price py-2">
+                                    <span>$90</span>
+                                </div>
+                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- !Owl Carousel -->
+                </div>
+            </section>
+        <!-- !New Laptops -->
+
+
+        </main>
+    <!-- !start #main -->
+
+    <!-- start #footer -->
+        <footer id="footer" class="bg-dark text-white py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-12">
+                        <h4 class="font-rubik font-size-20">Agile Laptop</h4>
+                        <p class="font-size-14 font-rale text-white-50">302CEM Agile Methodology Coursework August 2022</p>
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <h4 class="font-rubik font-size-20">Newsletter</h4>
+                        <form class="form-row">
+                            <div class="col">
+                                <input type="text" class="form-control mb-2" placeholder="Email *">
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-2 col-12">
+                        <h4 class="font-rubik font-size-20">Information</h4>
+                        <div class="d-flex flex-column flex-wrap">
+                            <a href="#" class="font-rale font-size-14 text-white-50 pb-1">About Us</a>
+                            <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Delivery Information</a>
+                            <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Privacy Policy</a>
+                            <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Terms & Conditions</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-12">
+                        <h4 class="font-rubik font-size-20">Account</h4>
+                        <div class="d-flex flex-column flex-wrap">
+                            <a href="#" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
+                            <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Order History</a>
+                            <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Wishlist</a>
+                            <a href="#" class="font-rale font-size-14 text-white-50 pb-1">Newsletter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <div class="copyright text-center bg-dark text-white py-2">
+            <p class="font-rale font-size-14">&copy; Copyright 2022. Agile Laptop</p>
+        </div>
+    <!-- !start #footer -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
+    <!-- Owl Carousel JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Isotope Plugin CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="./index.js"></script>
+</body>
+</html>
