@@ -21,9 +21,9 @@
         include ('Template/_banner-ads.php');
     /*  include banner ads  */
 
-    /*  include new phones section  */
+    /*  include new laptops section  */
         include ('Template/_new-laptops.php');
-    /*  include new phones section  */
+    /*  include new laptops section  */
 
     /*  include blog area  */
          include ('Template/_blogs.php');
