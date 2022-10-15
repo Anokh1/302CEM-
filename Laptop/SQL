@@ -1,0 +1,58 @@
+SQL DATABASE
+
+***CART TABLE***
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`);
+
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+***PRODUCT TABLE***
+CREATE TABLE `product` (
+  `item_id` int(11) NOT NULL,
+  `item_brand` varchar(200) NOT NULL,
+  `item_name` varchar(255) NOT NULL,
+  `item_price` double(10,2) NOT NULL,
+  `item_image` varchar(255) NOT NULL,
+  `item_register` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`item_id`);
+
+ALTER TABLE `product`
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item_image`, `item_register`) VALUES
+(1, 'Dell', 'Dell Inspiron 14 2-in-1', 70.00, './assets/products/1.PNG', '2022-10-15 11:08:57'), -- NOW()
+(2, 'Asus', 'Asus Zenbook 17 Fold OLED UX9702', 100.00, './assets/products/2.PNG', '2022-10-15 11:08:57'),
+(3, 'Apple', 'MacBook Air M1', 80.00, './assets/products/3.PNG', '2022-10-15 11:08:57'),
+(4, 'HP', 'HP Pavilion Laptop 14 - DV2028TU', 80.00, './assets/products/4.PNG', '2022-10-15 11:08:57'),
+(5, 'Acer', 'Acer Nitro 5 Intel Core i7-11800H 8-Core H45 Processor', 90.00, './assets/products/5.PNG', '2022-10-15 11:08:57')
+(6, 'Apple', 'MacBook Air M2', 85.00, './assets/products/6.PNG', '2022-10-15 11:08:57'); 
+
+
+**USER TABLE***
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `register_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
+(1, 'User', '1', '2022-10-15 13:07:17'),
+(2, 'User', '2', '2022-10-15 13:07:17');
