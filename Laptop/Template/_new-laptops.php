@@ -1,6 +1,14 @@
 <!-- New Laptops -->
 <?php
-    //shuffle( &array: $product_shuffle); 
+    //shuffle( &array: $product_shuffle); // NOTE: when i uncomment this line, everything is messed up...
+
+    // request method post
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        if (isset($_POST['new_laptops_submit'])){
+            // call method addToCart
+            $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
+        }
+    }
 ?>
 <section id="new-laptops">
         <div class="container">
@@ -27,6 +35,7 @@
                             <form method="post">
                                 <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                                 <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+                                <!-- change the button to prevent user froma adding it to cart again --> 
                                 <?php
                                 if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])){
                                     echo '<button type="submit" disabled class="btn btn-success font-size-12">In the Cart</button>';
