@@ -48,7 +48,7 @@ class Cart
         }
     }
 
-    // delete cart item using cart item id
+    // delete cart item using cart item id (_cart-template.php, line 52)
     public function deleteCart($item_id = null, $table = 'cart'){
         if($item_id != null){
             $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id={$item_id}");
@@ -59,18 +59,18 @@ class Cart
         }
     }
 
-    // calculate sub total
+    // calculate sum of the order
     public function getSum($arr){
         if(isset($arr)){
             $sum = 0;
             foreach ($arr as $item){
                 $sum += floatval($item[0]);
             }
-            return sprintf('%.2f' , $sum);
+            return sprintf('%.2f' , $sum); // 2 decimal places
         }
     }
 
-    // get item_it of shopping cart list
+    // get item_id of shopping cart list to remove duplicate entry of the same product in the shopping cart 
     public function getCartId($cartArray = null, $key = "item_id"){
         if ($cartArray != null){
             $cart_id = array_map(function ($value) use($key){
@@ -81,20 +81,20 @@ class Cart
     }
 
     // Save for later
-    public function saveForLater($item_id = null, $saveTable = "wishlist", $fromTable = "cart"){
-        if ($item_id != null){
-            $query = "INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id={$item_id};";
-            $query .= "DELETE FROM {$fromTable} WHERE item_id={$item_id};";
+    // public function saveForLater($item_id = null, $saveTable = "wishlist", $fromTable = "cart"){
+    //     if ($item_id != null){
+    //         $query = "INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id={$item_id};";
+    //         $query .= "DELETE FROM {$fromTable} WHERE item_id={$item_id};";
 
-            // execute multiple query
-            $result = $this->db->con->multi_query($query);
+    //         // execute multiple query
+    //         $result = $this->db->con->multi_query($query);
 
-            if($result){
-                header("Location :" . $_SERVER['PHP_SELF']);
-            }
-            return $result;
-        }
-    }
+    //         if($result){
+    //             header("Location :" . $_SERVER['PHP_SELF']);
+    //         }
+    //         return $result;
+    //     }
+    // }
 
 
 }
