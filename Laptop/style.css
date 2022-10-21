@@ -37,11 +37,11 @@ button, button:focus {
 
 /* Color Template */
 .color-primary {
-  color: #003859;
+  color: lightcoral;
 }
 
 .color-primary-bg {
-  background: #003859;
+  background: lightcoral;
 }
 
 .color-second {

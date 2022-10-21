@@ -25,10 +25,10 @@ class Product
         return $resultArray;
     }
 
-    // get product using item id
-    public function getProduct($item_id = null, $table= 'product'){
-        if (isset($item_id)){
-            $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id}");
+    // get product using barcodeNumber
+    public function getProduct($barcodeNumber = null, $table= 'product'){
+        if (isset($barcodeNumber)){
+            $result = $this->db->con->query("SELECT * FROM {$table} WHERE barcodeNumber={$barcodeNumber}");
 
             $resultArray = array();
 

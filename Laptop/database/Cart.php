@@ -31,12 +31,12 @@ class Cart
         }
     }
 
-    // to get user_id and item_id and insert into cart table
-    public  function addToCart($userid, $itemid){
-        if (isset($userid) && isset($itemid)){
+    // to get user_id and barcodeNumber and insert into cart table
+    public  function addToCart($userid, $barcode_Number){
+        if (isset($userid) && isset($barcode_Number)){
             $params = array(
                 "user_id" => $userid,
-                "item_id" => $itemid
+                "barcodeNumber" => $barcode_Number
             );
 
             // insert data into cart
@@ -48,10 +48,10 @@ class Cart
         }
     }
 
-    // delete cart item using cart item id (_cart-template.php, line 52)
-    public function deleteCart($item_id = null, $table = 'cart'){
-        if($item_id != null){
-            $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id={$item_id}");
+    // delete cart item using cart barcodeNumber (_cart-template.php, line 52)
+    public function deleteCart($barcodeNumber = null, $table = 'cart'){
+        if($barcodeNumber != null){
+            $result = $this->db->con->query("DELETE FROM {$table} WHERE barcodeNumber={$barcodeNumber}");
             if($result){
                 header("Location:" . $_SERVER['PHP_SELF']);
             }
@@ -71,7 +71,7 @@ class Cart
     }
 
     // get item_id of shopping cart list to remove duplicate entry of the same product in the shopping cart 
-    public function getCartId($cartArray = null, $key = "item_id"){
+    public function getCartId($cartArray = null, $key = "barcodeNumber"){
         if ($cartArray != null){
             $cart_id = array_map(function ($value) use($key){
                 return $value[$key];
