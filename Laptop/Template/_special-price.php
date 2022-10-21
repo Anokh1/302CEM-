@@ -1,5 +1,5 @@
 <?php
-    $brand = array_map(function ($pro){ return $pro['item_brand']; }, $product_shuffle);
+    $brand = array_map(function ($pro){ return $pro['']; }, $product_shuffle);
     //print_r($brand); 
     $unique = array_unique($brand);
     //print_r($unique); 

@@ -12,7 +12,7 @@ $db = new DBController();
 // Product object
 $product = new Product($db);
 
-if (isset($_POST['itemid'])){
-    $result = $product->getProduct($_POST['itemid']);
+if (isset($_POST['barcodenumber'])){
+    $result = $product->getProduct($_POST['barcodenumber']);
     echo json_encode($result);
 }

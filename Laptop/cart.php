@@ -12,7 +12,11 @@
 
 
     // include _new-laptops.php file
-    include('Template/_new-laptops.php'); 
+    // include('Template/_new-laptops.php'); 
+
+    /*  include banner ads  */
+    include ('Template/_banner-ads.php');
+    /*  include banner ads  */    
 
 ?>
 

@@ -1,7 +1,7 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (isset($_POST['delete-cart-submit'])){
-            $deletedrecord = $Cart->deleteCart($_POST['item_id']);
+            $deletedrecord = $Cart->deleteCart($_POST['barcodeNumber']);
         }
     }
 ?>
@@ -17,17 +17,17 @@
                         <?php
                             foreach ($product->getData('cart') as $item) :
                                 
-                                $cart = $product->getProduct($item['item_id']);
+                                $cart = $product->getProduct($item['barcodeNumber']);
                                 $subTotal[] = array_map(function ($item){
                         ?>
                             <!-- cart item -->
                             <div class="row border-top py-3 mt-3">
                                 <div class="col-sm-2">
-                                    <img src="<?php echo $item['item_image'] ?? "./assets/products/1.png" ?>" style="height: 90px;" alt="cart1" class="img-fluid">
+                                    <img src="<?php echo $item['productImage'] ?? "./assets/products/1.png" ?>" style="height: 90px;" alt="cart1" class="img-fluid">
                                 </div>
                                 <div class="col-sm-8">
-                                    <h5 class="font-baloo font-size-20"><?php echo $item['item_name'] ?? "Unknown"; ?></h5>
-                                    <small>by <?php echo $item['item_brand'] ?? "Brand"; ?></small>
+                                    <h5 class="font-baloo font-size-20"><?php echo $item['productName'] ?? "Unknown"; ?></h5>
+                                    <small>Category: <?php echo $item['productType'] ?? "Type"; ?></small>
                                     <!-- product rating --> <!-- need to retrieve from Ratings table -->
                                     <div class="d-flex">
                                         <div class="rating text-warning font-size-12">
@@ -44,25 +44,25 @@
                                     <!-- product qty -->
                                         <div class="qty d-flex pt-2">
                                             <div class="d-flex font-rale w-25">
-                                                <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
+                                                <button class="qty-up border bg-light" data-id="<?php echo $item['barcodeNumber'] ?? '0'; ?>">
                                                     <i class="fas fa-angle-up"></i>
                                                 </button>
-                                                <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" 
+                                                <input type="text" data-id="<?php echo $item['barcodeNumber'] ?? '0'; ?>" 
                                                     class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
-                                                <button data-id="<?php echo $item['item_id'] ?? '0'; ?>"
+                                                <button data-id="<?php echo $item['barcodeNumber'] ?? '0'; ?>"
                                                      class="qty-down border bg-light"><i class="fas fa-angle-down"></i>
                                                 </button>
                                             </div>
 
                                             <!-- Delete Product Button -->
                                             <form method="post">
-                                                <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
+                                                <input type="hidden" value="<?php echo $item['barcodeNumber'] ?? 0; ?>" name="barcodeNumber">
                                                 <button type="submit" name="delete-cart-submit" class="btn font-baloo text-danger px-3 border-right">Delete</button>
                                             </form>
                                             <!-- !Delete Product Button -->
 
                                             <!-- <form method="post">
-                                                <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
+                                                <input type="hidden" value="<?php echo $item['barcodeNumber'] ?? 0; ?>" name="item_id">
                                                 <button type="submit" name="wishlist-submit" class="btn font-baloo text-danger">Save for Later</button>
                                             </form> -->
                                         </div>
@@ -73,8 +73,8 @@
                                 <!-- product price --> 
                                 <div class="col-sm-2 text-right">
                                     <div class="font-size-20 text-danger font-baloo">
-                                        $<span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>"> <!-- ternary if and else statement -->
-                                            <?php echo $item['item_price'] ?? 0; ?>
+                                        $<span class="product_price" data-id="<?php echo $item['barcodeNumber'] ?? '0'; ?>"> <!-- ternary if and else statement -->
+                                            <?php echo $item['productPrice'] ?? 0; ?>
                                         </span>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                             </div>
                         <!-- !cart item -->
                         <?php
-                                    return $item['item_price'];
+                                    return $item['productPrice'];
                                 }, $cart); // closing array_map function at Line 13
                             endforeach;
                             //print_r($subTotal) // to see the array that calculate the sum of the items in the cart...
@@ -100,7 +100,7 @@
                                 <!-- Calculate the total of the order --> 
                                 <h5 class="font-baloo font-size-20">
                                     <!-- count($subTotal) : display the number of items in the cart -->
-                                    Subtotal ( <?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp; 
+                                    Subtotal ( <?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp; <!-- ternaary if and else statement -->
                                     <span class="text-danger">
                                         $
                                         <span class="text-danger" id="deal-price">
