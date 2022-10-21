@@ -11,7 +11,7 @@ if(mysqli_select_db($dbc,'agilelaptop')){
 	
 }
 else{
-	echo"ERROR! DB not found!";
+	print"ERROR! DB not found!";
 }
 mysqli_close($dbc);
 ?>
