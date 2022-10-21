@@ -74,7 +74,9 @@
 							}	
 							dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
 							dataHtml+='<li>';
-							dataHtml+='<a href=\'catalog.php?barcodeNumber='+item.barcodeNumber+'\'><img src=\'image/upload/'+item.productImage+'\' height=\'275\' width=\'200\'></a>';
+							dataHtml+='<a href=\'catalog.php?barcodeNumber='+item.barcodeNumber+'\'><img src=\'image/upload/';
+							dataHtml+=item.productImage;
+							dataHtml+='\' height=\'275\' width=\'200\' onerror=\"javascript:this.src=\'image/upload/noimg.png\'\"></a>';
 							dataHtml+='<br/>';
 							dataHtml+='<a href=\'catalog.php?barcodeNumber='+item.barcodeNumber+'\'>'+item.productName+'</a>';
 							dataHtml+='</li>';
@@ -95,6 +97,8 @@
 				
 			})
 		})
+		
+		
 		</script>";
 	
 	?>
