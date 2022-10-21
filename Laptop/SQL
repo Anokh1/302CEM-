@@ -4,7 +4,7 @@ SQL DATABASE
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL
+  `barcodeNumber` int(10) NOT NULL // change from 'item_id' to 'barcodeNumber'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE `cart`
