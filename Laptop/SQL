@@ -14,7 +14,7 @@ ALTER TABLE `cart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 
 
-***PRODUCT TABLE***
+***OLD PRODUCT TABLE***
 CREATE TABLE `product` (
   `item_id` int(11) NOT NULL,
   `item_brand` varchar(200) NOT NULL,
@@ -29,7 +29,22 @@ ALTER TABLE `product`
 
 ALTER TABLE `product`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  
+***NEW PRODUCT TABLE***
+CREATE TABLE `product` (
+  barcodeNumber int(10) AUTO_INCREMENT NOT NULL,
+  productName varchar(50),
+  productImage varchar(50),
+  description text,
+  quantity int(10),
+  productType varchar(50),  
+  productPrice double,
+  productWarranty boolean,
+  productWExpire date,
+  PRIMARY KEY (barcodeNumber)
+)
 
+***OLD INSERT***
 INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item_image`, `item_register`) VALUES
 (1, 'Dell', 'Dell Inspiron 14 2-in-1', 70.00, './assets/products/1.PNG', '2022-10-15 11:08:57'), -- NOW()
 (2, 'Asus', 'Asus Zenbook 17 Fold OLED UX9702', 100.00, './assets/products/2.PNG', '2022-10-15 11:08:57'),
@@ -37,6 +52,14 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 (4, 'HP', 'HP Pavilion Laptop 14 - DV2028TU', 80.00, './assets/products/4.PNG', '2022-10-15 11:08:57'),
 (5, 'Acer', 'Acer Nitro 5 Intel Core i7-11800H 8-Core H45 Processor', 90.00, './assets/products/5.PNG', '2022-10-15 11:08:57')
 (6, 'Apple', 'MacBook Air M2', 85.00, './assets/products/6.PNG', '2022-10-15 11:08:57'); 
+
+INSERT INTO `product` (`barcodeNumber`, `productType`, `productName`, `productPrice`, `productImage`, `productQuantity`) VALUES
+(1, 'Laptop', 'Dell Inspiron 14 2-in-1', 70.00, './assets/products/1.PNG', 8)
+(2, 'Laptop', 'Asus Zenbook 17 Fold OLED UX9702', 100.00, './assets/products/2.PNG', 8),
+(3, 'Laptop', 'MacBook Air M1', 80.00, './assets/products/3.PNG', 8),
+(4, 'Laptop', 'HP Pavilion Laptop 14 - DV2028TU', 80.00, './assets/products/4.PNG', 8),
+(5, 'Laptop', 'Acer Nitro 5 Intel Core i7-11800H 8-Core H45 Processor', 90.00, './assets/products/5.PNG', 8)
+(6, 'Laptop', 'MacBook Air M2', 85.00, './assets/products/6.PNG', 8); 
 
 
 **USER TABLE***
