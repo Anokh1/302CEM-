@@ -7,7 +7,7 @@
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if (isset($_POST['top_sale_submit'])){
             // call method addToCart
-            $Cart->addToCart($_POST['user_id'], $_POST['barcodeNumber']);
+            $Cart->addToCart($_POST['user_id'], $_POST['barcodeNumber'], $_POST['cart_total']);
         }
     }
 ?>
@@ -38,6 +38,7 @@
                         <form method="post">
                             <input type="hidden" name="barcodeNumber" value="<?php echo $item['barcodeNumber'] ?? '1'; ?>">
                             <input type="hidden" name="user_id" value="<?php echo 1; ?>"> <!-- user id is the first user cause there is no USER SESSION -->
+                            <input type="hidden" name="cart_total" value="<?php echo $item['cart_total'] ?? '0' ; ?>">
                             <!-- change the button to prevent user froma adding it to cart again --> 
                             <?php
                             if (in_array($item['barcodeNumber'], $Cart->getCartId($product->getData('cart')) ?? [])){

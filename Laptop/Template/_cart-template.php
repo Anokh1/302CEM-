@@ -110,7 +110,17 @@
                                     </span>
                                 </h5>
                                 <!-- !Calculate the total of the order --> 
-                                <button type="submit" class="btn btn-warning mt-3">Checkout</button>
+
+                                <!-- Go to Checkout page -->
+                                <!-- <button type="submit" class="btn btn-warning mt-3">Checkout</button> -->
+                                <!-- <a href="./checkout.php" class="btn btn-warning mt-3">Checkout</a> -->
+
+                                <form action="./checkout.php" method="post">
+                                    <input type="hidden" name="cart_total">
+                                    <button type="submit" name="submit-cart-total" class="btn btn-warning mt-3">Checkout</button>
+                                </form>
+
+                                <!-- !Go to Checkout page -->
                             </div>
                         </div>
                     </div>
