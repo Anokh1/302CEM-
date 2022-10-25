@@ -12,7 +12,7 @@ class Cart
     }
 
     // insert into cart table
-    public  function insertIntoCart($params = null, $table = "cart"){
+    public function insertIntoCart($params = null, $table = "cart"){
         if ($this->db->con != null){
             if ($params != null){
                 // "Insert into cart(user_id) values (0)"
@@ -23,6 +23,7 @@ class Cart
 
                 // create sql query
                 $query_string = sprintf("INSERT INTO %s(%s) VALUES(%s)", $table, $columns, $values);
+                                    //   INSERT INTO cart(user_id) VALUES (1);  
 
                 // execute query
                 $result = $this->db->con->query($query_string);
@@ -32,11 +33,12 @@ class Cart
     }
 
     // to get user_id and barcodeNumber and insert into cart table
-    public  function addToCart($userid, $barcode_Number){
+    public  function addToCart($userid, $barcode_Number, $carttotal){
         if (isset($userid) && isset($barcode_Number)){
             $params = array(
                 "user_id" => $userid,
-                "barcodeNumber" => $barcode_Number
+                "barcodeNumber" => $barcode_Number,
+                "cart_total" => $carttotal
             );
 
             // insert data into cart
@@ -56,6 +58,13 @@ class Cart
                 header("Location:" . $_SERVER['PHP_SELF']);
             }
             return $result;
+        }
+    }
+
+    // clear cart item using cart id
+    public function clearCart($cart_id = null, $table = 'cart'){
+        if($cart_id != null){
+            $result = $this->db->con->query("DELETE FROM {$table} WHERE cart_id={$cart_id}");
         }
     }
 
