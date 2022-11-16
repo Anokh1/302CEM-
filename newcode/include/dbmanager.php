@@ -6,8 +6,21 @@ mysqli_query($dbc,$sql);
 
 if(mysqli_select_db($dbc,'agilelaptop')){
 	
-	$sql1 = "CREATE TABLE IF NOT EXISTS product (barcodeNumber int(10) AUTO_INCREMENT NOT NULL,productName varchar(50),productImage varchar(50), description text,quantity int(10),productType varchar(50),productPrice double,productWarranty boolean,productWExpire date,PRIMARY KEY (barcodeNumber))";
+	$sql1 = "CREATE TABLE IF NOT EXISTS product (barcodeNumber int(10) AUTO_INCREMENT NOT NULL,productName varchar(50),productImage varchar(50), productDescription text,productQuantity int(10) UNSIGNED,productPrice double,categoryID int NOT NULL,PRIMARY KEY (barcodeNumber),FOREIGN KEY (categoryID) REFERENCES category(categoryID))";
 	mysqli_query($dbc,$sql1);
+	
+	$sql2 = "CREATE TABLE IF NOT EXISTS category (categoryID int(11) AUTO_INCREMENT NOT NULL,categoryName varchar(50),isDefault boolean,PRIMARY KEY (categoryID))";
+	mysqli_query($dbc,$sql2);
+	
+	$query1="INSERT IGNORE INTO category (categoryID,categoryName,isDefault)
+			VALUES(1,'Other',true)";
+				
+	if(@mysqli_query($dbc,$query1)){
+
+	}
+	else{
+		echo"ERROR! Table not found!";
+	}
 	
 }
 else{
