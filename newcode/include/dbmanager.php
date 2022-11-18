@@ -22,6 +22,9 @@ if(mysqli_select_db($dbc,'agilelaptop')){
 		echo"ERROR! Table not found!";
 	}
 	
+	$sql3 = "CREATE TABLE IF NOT EXISTS review (reviewID int(11) AUTO_INCREMENT NOT NULL,reviewRating int(2),reviewMsg text,reviewDate date,reviewTime time,userID int(11) NOT NULL,barcodeNumber int(11) NOT NULL, PRIMARY KEY (reviewID), FOREIGN KEY (barcodeNumber) REFERENCES product(barcodeNumber))";
+	mysqli_query($dbc,$sql3);
+	
 }
 else{
 	print"ERROR! DB not found!";

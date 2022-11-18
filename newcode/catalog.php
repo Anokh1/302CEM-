@@ -1,7 +1,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Laptop E-commerce</title>
+		<title>Agile Laptop</title>
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -74,11 +74,11 @@
 							}	
 							dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
 							dataHtml+='<li>';
-							dataHtml+='<a href=\'catalog.php?barcodeNumber='+item.barcodeNumber+'\'><img src=\'image/upload/';
+							dataHtml+='<a href=\'productdetails.php?barcodeNumber='+item.barcodeNumber+'\'><img src=\'image/upload/';
 							dataHtml+=item.productImage;
 							dataHtml+='\' height=\'275\' width=\'200\' onerror=\"javascript:this.src=\'image/upload/noimg.png\'\"></a>';
 							dataHtml+='<br/>';
-							dataHtml+='<a href=\'catalog.php?barcodeNumber='+item.barcodeNumber+'\'>'+item.productName+'</a>';
+							dataHtml+='<a href=\'productdetails.php?barcodeNumber='+item.barcodeNumber+'\'>'+item.productName+'</a>';
 							dataHtml+='</li>';
 							dataHtml+='</div>';
 								
