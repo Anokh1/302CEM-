@@ -1,7 +1,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Hokari Stock Management</title>
+		<title>Agile Laptop</title>
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,12 +20,13 @@
 			$problem=false;
 			
 			$dbc = mysqli_connect('localhost','root','');
-			@mysqli_select_db($dbc,'hokari');
+			@mysqli_select_db($dbc,'agilelaptop');
 			if($dbc){
 				$result=mysqli_query($dbc,"SELECT categoryName FROM category");
 				while($row=mysqli_fetch_array($result)){
-					if($categoryName==$row['categoryName']){
+					if($row['categoryName']==$categoryName){
 						$problem = true;
+						
 					}
 				}
 				mysqli_close($dbc);
