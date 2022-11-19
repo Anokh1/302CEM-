@@ -12,7 +12,12 @@
 	</head>
 	<body>
 		<?php
-
+			
+			include('include/dbmanager.php');
+			include('include/session.php');
+			
+			
+			
 			if(isset($_POST['submitreview'])){
 				$barcodeNumber=$_POST['barcodeNumber'];
 				$userID=$_POST['userID'];
@@ -121,9 +126,9 @@
 						$reviewcount=$row['total'];
 					}
 					if($reviewcount!=0){
-						$result2=mysqli_query($dbc,"SELECT * FROM review WHERE barcodeNumber=$barcodeNumber");
+						$result2=mysqli_query($dbc,"SELECT u.username,r.* FROM review r INNER JOIN users u ON r.userID=u.userID WHERE barcodeNumber=$barcodeNumber");
 						while($row=mysqli_fetch_array($result2)){
-							print"<li><p>Username ".$row['reviewDate']." ".$row['reviewTime']."</p>";
+							print"<li><p>".$row['username']." ".$row['reviewDate']." ".$row['reviewTime']."</p>";
 							
 							print"<div class='starcolor'>";
 							for($x=0;$x<$row['reviewRating'];$x++){
@@ -143,34 +148,39 @@
 				
 				
 				print"</ul>";
-				//if logged in show comment field, add user id input
 				print"<hr/>";
-				print"
-				<form method='post' action='productdetails.php'>
-					<textarea name='reviewMsg' rows='7' cols='50' required></textarea>
-					<br/>
+				//if logged in show comment field, add user id input
+				if(isset($_SESSION['userID'])){
+					$userID=$_SESSION['userID'];
+					print"
+					<form method='post' action='productdetails.php'>
+						<textarea name='reviewMsg' rows='7' cols='50' required></textarea>
+						<br/>
 
-					<div class='rate'>
-						<input type='radio' id='star5' name='rate' value='5' />
-						<label for='star5' title='text'>5 stars</label>
-						<input type='radio' id='star4' name='rate' value='4' />
-						<label for='star4' title='text'>4 stars</label>
-						<input type='radio' id='star3' name='rate' value='3' />
-						<label for='star3' title='text'>3 stars</label>
-						<input type='radio' id='star2' name='rate' value='2' />
-						<label for='star2' title='text'>2 stars</label>
-						<input type='radio' id='star1' name='rate' value='1' />
-						<label for='star1' title='text'>1 star</label>
-					</div>
+						<div class='rate'>
+							<input type='radio' id='star5' name='rate' value='5' />
+							<label for='star5' title='text'>5 stars</label>
+							<input type='radio' id='star4' name='rate' value='4' />
+							<label for='star4' title='text'>4 stars</label>
+							<input type='radio' id='star3' name='rate' value='3' />
+							<label for='star3' title='text'>3 stars</label>
+							<input type='radio' id='star2' name='rate' value='2' />
+							<label for='star2' title='text'>2 stars</label>
+							<input type='radio' id='star1' name='rate' value='1' />
+							<label for='star1' title='text'>1 star</label>
+						</div>
 
-					<br/><br/>
-					<input type='hidden' name='barcodeNumber' value='$barcodeNumber'/>
-					<input type='hidden' name='userID' value='1'/>
-					<input type='hidden' name='submitreview' value='true'/>
-					<button type='submit'>Submit</button>
-				</form>
+						<br/><br/>
+						<input type='hidden' name='barcodeNumber' value='$barcodeNumber'/>
+						<input type='hidden' name='userID' value='$userID'/>
+						<input type='hidden' name='submitreview' value='true'/>
+						<button type='submit'>Submit</button>
+					</form>
 				";
-			
+				}
+				else{
+					print"You need to be logged in to review! <a href='login.php'>login</a>";
+				}
 			}
 			
 			

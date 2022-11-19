@@ -22,8 +22,22 @@ if(mysqli_select_db($dbc,'agilelaptop')){
 		echo"ERROR! Table not found!";
 	}
 	
-	$sql3 = "CREATE TABLE IF NOT EXISTS review (reviewID int(11) AUTO_INCREMENT NOT NULL,reviewRating int(2),reviewMsg text,reviewDate date,reviewTime time,userID int(11) NOT NULL,barcodeNumber int(11) NOT NULL, PRIMARY KEY (reviewID), FOREIGN KEY (barcodeNumber) REFERENCES product(barcodeNumber))";
+	$sql3 = "CREATE TABLE IF NOT EXISTS review (reviewID int(11) AUTO_INCREMENT NOT NULL,reviewRating int(2),reviewMsg text,reviewDate date,reviewTime time,userID int(11) NOT NULL,barcodeNumber int(11) NOT NULL, PRIMARY KEY (reviewID), FOREIGN KEY (barcodeNumber) REFERENCES product(barcodeNumber), FOREIGN KEY (userID) REFERENCES users(userID))";
 	mysqli_query($dbc,$sql3);
+	
+	
+	$sql4 = "CREATE TABLE IF NOT EXISTS users (userID int(11) AUTO_INCREMENT NOT NULL,username varchar(50),password varchar(20), accountType varchar(30),firstname varchar(30),lastname varchar(30),phone varchar(15),email varchar(30),PRIMARY KEY (userID))";
+	mysqli_query($dbc,$sql4);
+	
+	$query2="INSERT IGNORE INTO users (userID,username,password,accountType)
+			VALUES(1,'admin','12345','Admin')";
+				
+	if(@mysqli_query($dbc,$query2)){
+
+	}
+	else{
+		echo"ERROR! Table not found!";
+	}
 	
 }
 else{
