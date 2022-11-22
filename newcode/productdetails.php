@@ -17,8 +17,31 @@
 			include('include/session.php');
 			
 			
+			if(isset($_GET['delete'])){
+				$reviewID=$_GET['reviewID'];
+				$barcodeNumber=$_GET['barcodeNumber'];
+				
+				$dbc = mysqli_connect('localhost','root','');
+				mysqli_select_db($dbc,'agilelaptop');
+				if($dbc){
+					
+					
+					$result="DELETE FROM review WHERE reviewID=$reviewID";
+					
+					if(@mysqli_query($dbc,$result)){
+						print"Review deleted";
+						mysqli_close($dbc);
+						header('Refresh:1; url=productdetails.php?barcodeNumber='.$barcodeNumber.'');
+					}
+					
+				}
+				else{
+					print"query failed";
+					mysqli_close($dbc);
+				}
+			}
 			
-			if(isset($_POST['submitreview'])){
+			else if(isset($_POST['submitreview'])){
 				$barcodeNumber=$_POST['barcodeNumber'];
 				$userID=$_POST['userID'];
 				$rate=$_POST['rate'];
@@ -136,6 +159,11 @@
 							}
 							print"</div>";
 							print"<p>".$row['reviewMsg']."</p></li>";
+							
+							if(isset($_SESSION['accountType'])&&$_SESSION['accountType']=="Admin"){
+								print"<a href='productdetails.php/?delete=true&reviewID=".$row['reviewID']."&barcodeNumber=$barcodeNumber'><button>Delete</button></a>";
+							}
+							
 						}
 
 					}
