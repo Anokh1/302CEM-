@@ -31,7 +31,7 @@
 					if(@mysqli_query($dbc,$result)){
 						print"Review deleted";
 						mysqli_close($dbc);
-						header('Refresh:1; url=productdetails.php?barcodeNumber='.$barcodeNumber.'');
+						header('Refresh:1; url=?barcodeNumber='.$barcodeNumber.'');
 					}
 					
 				}
@@ -62,7 +62,7 @@
 					if(@mysqli_query($dbc,$result)){
 						print"Added";
 						mysqli_close($dbc);
-						header('Refresh:1; url=productdetails.php?barcodeNumber='.$barcodeNumber.'');
+						header('Refresh:1; url=?barcodeNumber='.$barcodeNumber.'');
 					}
 					
 				}
@@ -161,7 +161,7 @@
 							print"<p>".$row['reviewMsg']."</p></li>";
 							
 							if(isset($_SESSION['accountType'])&&$_SESSION['accountType']=="Admin"){
-								print"<a href='productdetails.php/?delete=true&reviewID=".$row['reviewID']."&barcodeNumber=$barcodeNumber'><button>Delete</button></a>";
+								print"<a href='productdetails.php?delete=true&reviewID=".$row['reviewID']."&barcodeNumber=$barcodeNumber'><button>Delete</button></a>";
 							}
 							
 						}
