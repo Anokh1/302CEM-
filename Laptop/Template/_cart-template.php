@@ -1,9 +1,9 @@
 <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if (isset($_POST['delete-cart-submit'])){
-            $deletedrecord = $Cart->deleteCart($_POST['barcodeNumber']);
-        }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['delete-cart-submit'])) {
+        $deletedrecord = $Cart->deleteCart($_POST['barcodeNumber']);
     }
+}
 ?>
 
 <!-- Shopping cart section  -->
@@ -15,11 +15,10 @@
                 <div class="row">
                     <div class="col-sm-9">
                         <?php
-                            foreach ($product->getData('cart') as $item) :
-                                
+                        foreach ($product->getData('cart') as $item) :
                                 $cart = $product->getProduct($item['barcodeNumber']);
-                                $subTotal[] = array_map(function ($item){
-                        ?>
+                                $subTotal[] = array_map(function ($item) {
+                                    ?>
                             <!-- cart item -->
                             <div class="row border-top py-3 mt-3">
                                 <div class="col-sm-2">
@@ -48,7 +47,7 @@
                                                     <i class="fas fa-angle-up"></i>
                                                 </button>
                                                 <input type="text" data-id="<?php echo $item['barcodeNumber'] ?? '0'; ?>" 
-                                                    class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                                                    class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1"> <!--item_quantity-->
                                                 <button data-id="<?php echo $item['barcodeNumber'] ?? '0'; ?>"
                                                      class="qty-down border bg-light"><i class="fas fa-angle-down"></i>
                                                 </button>
@@ -61,10 +60,6 @@
                                             </form>
                                             <!-- !Delete Product Button -->
 
-                                            <!-- <form method="post">
-                                                <input type="hidden" value="<?php echo $item['barcodeNumber'] ?? 0; ?>" name="item_id">
-                                                <button type="submit" name="wishlist-submit" class="btn font-baloo text-danger">Save for Later</button>
-                                            </form> -->
                                         </div>
                                     <!-- !product qty -->
 
@@ -74,7 +69,7 @@
                                 <div class="col-sm-2 text-right">
                                     <div class="font-size-20 text-danger font-baloo">
                                         $<span class="product_price" data-id="<?php echo $item['barcodeNumber'] ?? '0'; ?>"> <!-- ternary if and else statement -->
-                                            <?php echo $item['productPrice'] ?? 0; ?>
+                                            <?php echo $item['productPrice'] ?? 0; ?> <!--item_price-->
                                         </span>
                                     </div>
                                 </div>
@@ -82,10 +77,10 @@
 
                             </div>
                         <!-- !cart item -->
-                        <?php
+                                    <?php
                                     return $item['productPrice'];
                                 }, $cart); // closing array_map function at Line 13
-                            endforeach;
+                        endforeach;
                             //print_r($subTotal) // to see the array that calculate the sum of the items in the cart...
                         ?>
 
@@ -109,15 +104,21 @@
                                         </span>
                                     </span>
                                 </h5>
-                                <!-- !Calculate the total of the order --> 
 
-                                <!-- Go to Checkout page -->
-                                <!-- <button type="submit" class="btn btn-warning mt-3">Checkout</button> -->
-                                <!-- <a href="./checkout.php" class="btn btn-warning mt-3">Checkout</a> -->
+                                <form method="post">
 
-                                <form action="./checkout.php" method="post">
+                                    <input type="hidden" name="barcodeNumber" value="<?php echo $item['barcodeNumber'] ?? '1'; ?>">
+                                    <input type="hidden" name="user_id" value="<?php echo 1; ?>"> <!-- user id is the first user cause there is no USER SESSION -->
+                                    <input type="hidden" name="productPrice" value="<?php echo $item['productPrice'] ?? '100' ; ?>">
+
+
+                                    
                                     <input type="hidden" name="cart_total">
-                                    <button type="submit" name="submit-cart-total" class="btn btn-warning mt-3">Checkout</button>
+                                    <?php
+                                        echo '<button type="submit" 
+                                               name="submit-cart-total" 
+                                               class="btn btn-warning mt-3">Checkout</button>';
+                                    ?>
                                 </form>
 
                                 <!-- !Go to Checkout page -->

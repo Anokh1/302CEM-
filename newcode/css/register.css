@@ -1,0 +1,126 @@
+.pagecontent{
+	margin-left:auto;
+	margin-right:auto;
+	height: 100%;
+	color:white;
+	margin-top:50px;
+	margin-bottom:50px;
+	background-color:rgb(0,0,0);
+	padding:40px;
+	border-radius:20px;
+}
+
+.pagecontent h1{
+	margin: 10px 0px;
+}
+
+input[type=text],input[type=email],input[type=password] {
+  padding: 6px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius:5px;
+  background-color:rgb(255,255,255,0.5);
+}
+
+::placeholder{
+	color:black;
+}
+
+form .error{
+	color:red;
+}
+
+
+
+input:focus{
+	box-shadow: 0px 0px 5px 3px #f1f1f1;
+	outline: none;
+}
+
+.submitbtn,.backbtn{
+	background-color: black;
+	border-color:white;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius:10px;
+}
+.submitbtn{
+	float:left;
+}
+
+fieldset {
+    border: 1px solid white;
+	padding: 20px;
+}
+
+.requiredfield{
+	display:inline;
+	color:red;
+}
+
+/*tooltip*/
+
+.passtooltip{
+	position:relative;
+}
+
+.passtooltip .passstr{
+	visibility: hidden;
+	background-color: white;
+	color: black;
+	border-radius: 6px;
+	padding: 10px 10px;
+	
+	position: absolute;
+	z-index: 3;
+	 
+}
+
+#plength,#psmalla,#pbiga,#pnum,#psym{
+	display:inline;
+	color:red;
+}
+
+.passstr{
+	visibility: hidden;
+	background-color: white;
+	color: black;
+}
+
+
+.selectpass:focus + .passstr{
+	visibility: visible;
+}
+
+/*=================*/
+
+/*progress*/
+.progress{
+	height:5px;
+	width:220px;
+}
+
+.progress .progressbar{
+	width:0%;
+}
+
+/*===========*/
+
+form p{
+	margin:0px;
+}
+@media(max-width:720px){
+	input[type=text],input[type=email]{
+		
+	}
+	
+	.passtooltip .passstr{
+		top: 100%;
+		left: 50%;
+		margin-left: -60px;
+	}
+}

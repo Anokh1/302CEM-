@@ -11,17 +11,16 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
 		
 		<link rel="stylesheet" href="css/paginationtable.css"/>
-		<link rel='stylesheet' href='css/movielist.css'>
+		<link rel='stylesheet' href='css/productlist.css'>
 	</head>
 	<body>
 	<?php
 		include('include/dbmanager.php');
-		include('include/session.php');
+		
 	?>
-	
-	
 	<div class='movielist col-lg-12 col-md-12 col-sm-12 col-xs-12'>
 	<?php
+		print"<a href='productadd.php'><button>Add</button></a>";
 		
 		print"<div id='container'></div>
 		<div id='pagination'></div>";
@@ -41,7 +40,7 @@
 					$.ajax({
 						type: 'GET',
 						dataType:'json',
-						url: 'phpscript/retrieveproductdata.php',
+						url: 'phpscript/retrieveproductlist.php',
 						success: function(response) {
 							ajaxarray=response;
 							done(response);
@@ -60,40 +59,40 @@
 					}
 					else{
 						paginationoption.style.display='';
-						dataHtml = '';
+						dataHtml = '<table><tr><th>No.</th><th>Product Image</th><th>Product Name</th><th>Category</th><th>Price</th><th>Quantity</th><th>Edit</th><th>Delete</th></tr>';
 						var count;
 						
 						currentpage=pagination.pageNumber;
 						
-						count=1;
+						if(pagination.pageNumber==1){
+							count=1;
+						}
+						else{
+							count=20*(pagination.pageNumber-1)+1;
+						}
 						
-						dataHtml+='<ul>';
-
 						$.each(data, function (index, item) {
-							
-								
-							if(count==1||count%5==0){
-								dataHtml+='<div class=\'row justify-content-md-center\'>';
-							}	
-							dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
-							dataHtml+='<li>';
-							dataHtml+='<a href=\'productdetails.php?barcodeNumber='+item.barcodeNumber+'\'><img src=\'image/upload/';
-							dataHtml+=item.productImage;
-							dataHtml+='\' height=\'275\' width=\'200\' onerror=\"javascript:this.src=\'image/upload/noimg.png\'\"></a>';
-							dataHtml+='<br/>';
-							dataHtml+='<a href=\'productdetails.php?barcodeNumber='+item.barcodeNumber+'\'>'+item.productName+'</a>';
-							dataHtml+='</li>';
-							dataHtml+='</div>';
-								
-							if(count%4==0){
-								dataHtml+='</div><br/><br/>';
+							dataHtml += '<tr>';
+							dataHtml += '<td>'+count+'</td>';
+							dataHtml += '<td><img src=\'image/upload/' + item.productImage + '\' height=\'100\' width=\'100\'/></td>';
+							dataHtml += '<td>' + item.productName + '</td>';
+							dataHtml += '<td>' + item.categoryName + '</td>';
+							dataHtml += '<td>' + item.productPrice + '</td>';
+							if(item.productQuantity==0){
+								dataHtml += '<td>Out of Stock</td>';
 							}
+							else{
+								dataHtml += '<td>' + item.productQuantity + '</td>';
+							}
+							dataHtml += '<td><a href=\'productedit.php?barcodeNumber='+item.barcodeNumber+'\'>Edit</a></td>';
+							dataHtml += '<td><a href=\'productdelete.php?barcodeNumber='+item.barcodeNumber+'\'>Delete</a></td>';
 							
+							dataHtml += '</tr>';
 							count++;
-							
 						});
-						
-						dataHtml+='</ul>';
+
+						dataHtml+='</table>';
+
 						$('#container').html(dataHtml);
 					}
 				}
@@ -110,7 +109,3 @@
 	</body>
 	
 </html>
-
-
-
-

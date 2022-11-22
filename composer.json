@@ -1,0 +1,6 @@
+{
+    "name": "aokha/agilecoursework",
+    "require": {
+        "squizlabs/php_codesniffer": "3.*"
+    }
+}

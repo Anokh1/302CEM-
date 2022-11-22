@@ -1,5 +1,8 @@
 SQL DATABASE
 
+______RUN THIS QUERY ON PHPMYADMIN______
+______IN agilelaptop DATABASE______
+
 ***CART TABLE***
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
@@ -12,6 +15,27 @@ ALTER TABLE `cart`
 
 ALTER TABLE `cart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+
+**USER TABLE***
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `register_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
+(1, 'User', '1', '2022-10-15 13:07:17'),
+(2, 'User', '2', '2022-10-15 13:07:17');
+
+
+_____OPTIONAL IF THE PRODUCT TABLE IS NOT GENERATED______
 
 
 ***OLD PRODUCT TABLE***
@@ -62,20 +86,3 @@ INSERT INTO `product` (`barcodeNumber`, `productType`, `productName`, `productPr
 (6, 'Laptop', 'MacBook Air M2', 85.00, './assets/products/6.PNG', 8); 
 
 
-**USER TABLE***
-CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
-  `register_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
-
-ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
-(1, 'User', '1', '2022-10-15 13:07:17'),
-(2, 'User', '2', '2022-10-15 13:07:17');
