@@ -21,7 +21,7 @@
 
     <?php
         // require functions.php file
-        require('functions.php'); 
+        require('functions.php');
         //C:\xampp\htdocs\Agile\Laptop\functions.php
     ?>
 </head>
@@ -33,10 +33,8 @@
                 <p class="font-rale font-size-12 text-black-50 m-0">Group 11 INTI International College Penang</p>
                 <div class="font-rale font-size-14">
                     <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-                    <!-- <a href="#" class="px-3 border-right border-left text-dark">Wishlist (0)</a> -->
                 </div>
             </div>
-            <!--<nav class="navbar navbar-expand-lg bg-light"></nav>-->
             <!-- Primary Navigation -->
             <nav class="navbar navbar-expand-lg color-primary-bg">
                 <div class="container-fluid">
@@ -49,24 +47,9 @@
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                       </li>
-                      <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">On Sales</a>
-                      </li> -->
                       <li class="nav-item">
                         <a class="nav-link" href="#">Category</a>
                       </li>
-                      <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Products<i class="fas fa-chevron-down"></i></a>
-                      </li> -->
-                      <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                      </li> -->
-                      <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Category</a>
-                      </li> -->
-                      <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Coming Soon</a>
-                      </li>                       -->
                     </ul>
                     <form action="#" class="font-size-14 font-rale">
                         <!-- Go to Cart page -->
@@ -74,13 +57,14 @@
                             <!-- Shopping Cart icon not working -->
                             <span class="font-size-16 px-2 text-white"><i class="fa-solid fa-cart-shopping"></i></span>
                             <!-- Cart quantity --> 
-                            <span class="px-3 py-2 rounded-pill text-dark bg-light"><?php echo count($product->getData('cart')); ?></span> 
+                            <span class="px-3 py-2 rounded-pill text-dark bg-light">
+                                <?php echo count($product->getData('cart')); ?></span>
                         </a>
                     </form>
                   </div>
                 </div>
             </nav>
-            <!-- !Primmary Navigation -->
+            <!-- !Primary Navigation -->
 
         </header>
     <!-- !start #header -->

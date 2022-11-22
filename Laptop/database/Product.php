@@ -12,13 +12,14 @@ class Product
     }
 
     // fetch product data using getData Method
-    public function getData($table = 'product'){
+    public function getData($table = 'product')
+    {
         $result = $this->db->con->query("SELECT * FROM {$table}");
 
         $resultArray = array();
 
         // fetch product data one by one
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $resultArray[] = $item;
         }
 
@@ -26,19 +27,21 @@ class Product
     }
 
     // get product using barcodeNumber
-    public function getProduct($barcodeNumber = null, $table= 'product'){
-        if (isset($barcodeNumber)){
+    public function getProduct($barcodeNumber = null, $table = 'product')
+    {
+        if (isset($barcodeNumber)) {
             $result = $this->db->con->query("SELECT * FROM {$table} WHERE barcodeNumber={$barcodeNumber}");
 
             $resultArray = array();
 
             // fetch product data one by one
-            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                 $resultArray[] = $item;
             }
 
             return $resultArray;
         }
     }
+
 
 }
