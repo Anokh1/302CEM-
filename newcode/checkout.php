@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Light Cinema</title>
+		<title>Agile Laptop</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -28,11 +28,6 @@
 		<div class='container-fluid pr-0'>
 			<div class='row mr-0'>
 				<div class='catalog col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-				
-				
-				
-				
-				
 					<?php
 					if(isset($_POST['submitted'])){
 						
@@ -103,10 +98,34 @@
 								}
 								
 								$jsoncontent=json_encode($_SESSION["cart_item"]);
-								$total_price=0;
+								$subtotal_price=0.0;
+								$total_price=0.0;
+								$deliveryprice=0.0;
+								$loyaltypoint=0;
 								foreach ($_SESSION["cart_item"] as $item){
-									$total_price+=$item["productPrice"]*$item["quantity"];
+									$subtotal_price+=$item["productPrice"]*$item["quantity"];
 								}
+								$deliveryprice=$subtotal_price*5.0/100.0;
+								$total_price=$subtotal_price+$deliveryprice;
+								$loyaltypoint=($total_price*2.0/100.0)%100;
+								
+								$userID=$_SESSION['userID'];
+								
+								$dbc = mysqli_connect('localhost','root','');
+								mysqli_select_db($dbc,'agilelaptop');
+								if($dbc){
+									$result="UPDATE users SET loyaltypoint=$loyaltypoint WHERE userID='$userID'";
+									
+									if(@mysqli_query($dbc,$result)){
+										
+									}
+								}
+								else{
+									print"query failed";
+									
+								}
+								
+								
 								date_default_timezone_set('Asia/Kuala_Lumpur');
 								$currdate=date("Y-m-d");
 								$currtime=date("H:i:s");

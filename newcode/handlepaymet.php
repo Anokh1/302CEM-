@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Light Cinema</title>
+		<title>Agile Laptop</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,6 +11,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 		
 		<link rel='stylesheet' href='css/general.css'>
+		<link rel='stylesheet' href='css/general2.css'>
 		<link rel='stylesheet' href='css/myacc.css'>
 	</head>
 	
@@ -20,27 +21,6 @@
 			include'include/header.php';
 		?>
 		
-		<div class='container-fluid p-0 content'>
-			<div class='row mr-0'>
-				<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0'>
-					<img src='image/banner.jpg' width='100%' height='300' alt='Banner'/>
-				</div>
-			</div>
-		</div>
-		
-		<div class='container-fluid p-0'>
-			<div class='row mr-0'>
-				<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-					<ul class="mybreadcrumb">
-						<li><a href="homepage.php">Home</a></li>
-						<li><a href="myaccount.php">My Account</a></li>
-						<li>Payment method</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-		<hr/>
 		
 		<div class='pagecontent container-fluid p-0'>
 			<div class='row mr-0'>

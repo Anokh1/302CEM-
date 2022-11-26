@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Light Cinema</title>
+		<title>Agile Laptop</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -40,7 +40,7 @@
 					@mysqli_select_db($dbc,'agilelaptop');
 					
 					if($dbc){
-						$result=mysqli_query($dbc,"SELECT username,password,firstname,lastname,email,phone
+						$result=mysqli_query($dbc,"SELECT username,password,firstname,lastname,email,phone,loyaltypoint
 													FROM users
 													WHERE userID=$userID");
 						$row=mysqli_fetch_row($result);
@@ -71,6 +71,10 @@
 							<tr>
 								<td>Phone number</td>
 								<td>: ".$row[5]."</td>
+							</tr>
+							<tr>
+								<td>Loyalty point</td>
+								<td>: ".$row[6]."</td>
 							</tr>
 						</table>
 						";

@@ -24,7 +24,7 @@ if(mysqli_select_db($dbc,'agilelaptop')){
 	$sql2 = "CREATE TABLE IF NOT EXISTS product (barcodeNumber varchar(50) NOT NULL,productName varchar(50),productImage varchar(50), productDescription text,productQuantity int(10) UNSIGNED,productPrice double(10,2),productTPrice double(10,2),productManuDate date,productWarranty boolean,categoryID int NOT NULL,PRIMARY KEY (barcodeNumber),FOREIGN KEY (categoryID) REFERENCES category(categoryID))";
 	mysqli_query($dbc,$sql2);
 	
-	$sql3 = "CREATE TABLE IF NOT EXISTS users (userID int(11) AUTO_INCREMENT NOT NULL,username varchar(50),password varchar(20), accountType varchar(30),firstname varchar(30),lastname varchar(30),phone varchar(15),email varchar(30),cardNum varchar(30),cardType varchar(20),PRIMARY KEY (userID))";
+	$sql3 = "CREATE TABLE IF NOT EXISTS users (userID int(11) AUTO_INCREMENT NOT NULL,username varchar(50),password varchar(20), accountType varchar(30),firstname varchar(30),lastname varchar(30),phone varchar(15),email varchar(30),cardNum varchar(30),cardType varchar(20),loyaltypoint int(10),PRIMARY KEY (userID))";
 	mysqli_query($dbc,$sql3);
 	
 	$query2="INSERT IGNORE INTO users (userID,username,password,accountType)

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Light Cinema</title>
+		<title>Agile Laptop</title>
 		<link rel='stylesheet' href='css/general.css'>
 		<link rel='stylesheet' href='css/admincontrolpanel.css'>
 		
