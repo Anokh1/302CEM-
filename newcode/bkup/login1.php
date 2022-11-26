@@ -2,32 +2,31 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Light Cinema</title>
+		<title>Agile Laptop</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-		<script src="js/pagination.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
 		
-		
-		<link rel='stylesheet' href='css/general.css'/>
-		<link rel='stylesheet' href='css/general2.css'/>
 		<link rel='stylesheet' href='css/login.css'>
-
 	</head>
 	
 	<body>
+		
+	
+	
+	
 		<?php
-			include'include/dbmanager.php';
-			include'include/header.php';
-			
+			if(!isset($_SESSION)){
+				session_start();
+			}
 		?>
-		<div class='container-fluid pr-0'>
+
+		<div class='container-fluid p-0'>
 			<div class='row justify-content-md-center mr-0'>
-				<div class='pagecontent col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+				<div class='pagecontent col-lg-4 col-md-4 col-sm-4 col-xs-4 '>
 					<h3>Login</h3>
 					<hr/>
 					
@@ -79,7 +78,6 @@
 										print"</div>";
 										print"</div>";
 										print"</div>";
-										include'include/footer.php';
 										$accountType=$row['accountType'];
 										$userID=$row['userID'];
 										header('Refresh:2; url=catalog.php');
@@ -147,12 +145,6 @@
 			</div>
 		</div>
 		
-		
-		<?php include'include/footer.php';?>
-		
-		<script src='js/sidemenu.js'></script>
-
 		<script src='js/loginvalidation.js'></script>
-		
 	</body>
 </html>
