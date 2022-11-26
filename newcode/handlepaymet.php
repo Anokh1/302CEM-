@@ -19,6 +19,10 @@
 		<?php
 			include'include/dbmanager.php';
 			include'include/header.php';
+			if(!isset($_SESSION['userID'])){
+				print"<p>You must be logged in to view this page, <a href='login.php'>Login here</a></p>";
+			}
+			else{
 		?>
 		
 		
@@ -164,6 +168,7 @@
 		</div>
 		
 		<?php
+			}
 			//alert success
 			include'include/footer.php';
 		?>

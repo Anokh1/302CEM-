@@ -16,6 +16,22 @@
 	</head>
 	
 	<body>
+		<?php
+		include'include/dbmanager.php';
+		
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		
+		if(!isset($_SESSION['userID'])){
+			print"You must be logged in to view this page, <a href='login.php'>Login here</a>";
+		}
+		else if(isset($_SESSION['accountType'])&&$_SESSION['accountType']!="Admin"){
+			print"You don't have permission to view this page, <a href='catalog.php'>Back to homepage</a>";
+		}
+		else{
+		?>
+	
 		<a href='catalog.php'><button class='returnbutton'>&larr; Return to website</button></a>
 		
 		<br/>
@@ -26,6 +42,7 @@
 					<div class='row mr-0'>
 						
 						<?php
+							include'include/dbmanager.php';
 							include('include/adminsidenav.php');
 						?>
 						
@@ -475,5 +492,9 @@
 				</div>
 			</div>
 		</div>
+		<?php
+		
+		}
+		?>
 	</body>
 </html>

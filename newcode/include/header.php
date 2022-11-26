@@ -27,7 +27,6 @@
 						print"<a href='catalog.php'><img src='image/logo.png' width='150' height='50' alt='Logo' class='hlogo'/></a>";
 						print"<ul>";
 							print"<li><a href='catalog.php'>Catalog</a></li>";
-							print"<li><a href='movies.php'>Warranty</a></li>";
 							
 						print"</ul>";
 						print"<a href='shoppingcart.php'><button class='booknowbtn smallheader'><span>View Cart</span></button></a>";

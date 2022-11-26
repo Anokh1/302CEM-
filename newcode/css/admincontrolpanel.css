@@ -95,6 +95,10 @@ table{
 	width:100%;
 }
 
+body{
+	color:white;
+}
+
 .addbtn{
 	background-color: black;
 	border-color:white;

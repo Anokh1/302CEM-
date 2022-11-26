@@ -23,7 +23,6 @@
 		<?php
 			include'include/dbmanager.php';
 			include'include/header.php';
-			
 		?>
 		<div class='container-fluid pr-0'>
 			<div class='row mr-0'>
@@ -169,6 +168,9 @@
 							}
 							else if(isset($_SESSION["cart_item"]["C".$barcodeNumber]["quantity"])&&$_SESSION["cart_item"]["C".$barcodeNumber]["quantity"]>=$row[6]){
 								print"All stocks are already in cart";
+							}
+							else if(!isset($_SESSION['userID'])){
+								print"You must be logged in to purchase, <a href='login.php'>Login here</a>";
 							}
 							else if($row[6]!=0){
 								print"<a href='shoppingcart.php?action=add&barcodeNumber=$barcodeNumber&quantity=1'><button>Add to cart</button></a>";

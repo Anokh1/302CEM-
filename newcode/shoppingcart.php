@@ -23,7 +23,10 @@
 		<?php
 			include'include/dbmanager.php';
 			include'include/header.php';
-			//print''.$_SESSION["cart_item"][0]["barcodeNumber"].'';
+			if(!isset($_SESSION['userID'])){
+				print"<p>You must be logged in to view this page, <a href='login.php'>Login here</a></p>";
+			}
+			else{
 		?>
 		<?php
 			if(!empty($_GET["action"])) {
@@ -152,7 +155,9 @@
 		</div>
 		
 		
-		<?php include'include/footer.php';?>
+		<?php 
+			}
+		include'include/footer.php';?>
 		
 		<script src='js/sidemenu.js'></script>
 	</body>

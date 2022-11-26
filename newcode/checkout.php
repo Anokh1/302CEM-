@@ -23,7 +23,10 @@
 		<?php
 			include'include/dbmanager.php';
 			include'include/header.php';
-			
+			if(!isset($_SESSION['userID'])){
+				print"<p>You must be logged in to view this page, <a href='login.php'>Login here</a></p>";
+			}
+			else{
 		?>
 		<div class='container-fluid pr-0'>
 			<div class='row mr-0'>
@@ -280,7 +283,9 @@
 		</div>
 		
 		
-		<?php include'include/footer.php';?>
+		<?php 
+			}
+		include'include/footer.php';?>
 		
 		<script src='js/sidemenu.js'></script>
 		<script src='javascript/cardvalid.js'></script>
