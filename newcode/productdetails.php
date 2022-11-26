@@ -191,9 +191,9 @@
 								$reviewcount=$row['total'];
 							}
 							if($reviewcount!=0){
-								$result2=mysqli_query($dbc,"SELECT u.username,r.* FROM review r INNER JOIN users u ON r.userID=u.userID WHERE barcodeNumber='$barcodeNumber'");
+								$result2=mysqli_query($dbc,"SELECT u.username,r.* FROM review r INNER JOIN users u ON r.userID=u.userID WHERE barcodeNumber='$barcodeNumber' ORDER BY r.reviewDate DESC, r.reviewTime DESC");
 								while($row=mysqli_fetch_array($result2)){
-									print"<li><p>".$row['username']." ".$row['reviewDate']." ".$row['reviewTime']."</p>";
+									print"<li><p>".$row['username']." ".$row['reviewDate']." </p>";
 									
 									print"<div class='starcolor'>";
 									for($x=0;$x<$row['reviewRating'];$x++){
