@@ -1,0 +1,24 @@
+.catalog{
+	color:white;
+	
+}
+
+.catalog ul{
+	
+	list-style-type: none;
+}
+
+.catalog a{
+	text-decoration: none;
+}
+
+#paginationbar{
+text-align:center;	
+}
+
+#pagination{
+	
+	display: inline-block;
+	margin:0 auto;
+}
+

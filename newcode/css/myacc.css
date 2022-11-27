@@ -1,0 +1,177 @@
+/*page content*/
+.pagecontent{
+	height: 100%;
+	font-size:1vw;
+}
+
+input[type=text],input[type=email],input[type=password],select {
+  padding: 6px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius:5px;
+  background-color:rgb(255,255,255,0.5);
+}
+
+.submitbtn{
+	background-color: black;
+	border-color:white;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius:10px;
+}
+
+.displaytable {
+	width:100%;
+}
+
+td{
+	padding: 10px 0px;
+}
+
+
+.tag{
+	background-color:blue;
+	width:100%;
+	display:inline;
+	padding:3px;
+}
+
+.articledetail hr{
+	margin:0px 0px;
+}
+
+.pagecontent a{
+	color:white;
+}
+
+/*Side search*/
+.contentnav{
+	background-color:rgb(0,0,0);
+	color:white;
+	width:100%;
+	margin:25px;
+	padding:10px;
+	text-align:center;
+	border: 5px double white;
+	height:100%;
+}
+
+.contentnav a{
+	text-decoration:none;
+}
+
+.contentnav ul{
+	padding:0px;
+}
+
+.contentnav li{
+	list-style-type:none;
+}
+
+/*movie list*/
+.articledetail{
+	background-color:rgb(0,0,0);
+	color:white;
+	margin:25px;
+	width:100%;
+	float:right;
+	padding:10px;
+	border: 5px double white;
+}
+
+h3{
+	font-size:2vw;
+}
+
+li a:hover{
+	color:#0033cc;
+}
+
+li a{
+    position: relative;
+}
+
+li a:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+li a:hover:before{
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+
+/*=====================*/
+/*tooltip*/
+
+.passtooltip{
+	position:relative;
+}
+
+.passtooltip .passstr{
+	visibility: hidden;
+	background-color: white;
+	color: black;
+	border-radius: 6px;
+	padding: 10px 10px;
+	
+	position: absolute;
+	z-index: 3;
+	 
+}
+
+#plength,#psmalla,#pbiga,#pnum,#psym{
+	display:inline;
+	color:red;
+}
+
+.passstr{
+	visibility: hidden;
+	background-color: white;
+	color: black;
+}
+
+
+.selectpass:focus + .passstr{
+	visibility: visible;
+}
+
+/*=================*/
+
+/*progress*/
+.progress{
+	height:5px;
+	width:220px;
+}
+
+.progress .progressbar{
+	width:0%;
+}
+
+/*===========*/
+
+.pagecontent input[type=text],input[type=password],input[type=email],select{
+	border:none;
+}
+
+@media(max-width:720px){
+	
+	.passtooltip .passstr{
+		top: 100%;
+		left: 50%;
+		margin-left: -60px;
+	}
+}
