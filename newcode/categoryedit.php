@@ -106,7 +106,7 @@
 										$row=mysqli_fetch_row($result);
 										print"
 										<a href='categorylist.php'><button>&larr; Back</button></a>
-										<h3>Edit Product</h3>
+										<h3>Edit Category</h3>
 										<hr/>";
 										print"
 										<table>

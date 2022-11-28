@@ -28,7 +28,9 @@
 		<div class='container-fluid pr-0'>
 			<div class='row mr-0'>
 				<div class='catalog col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-					<h3>Catalog</h3>
+					<br/>
+					<h3 style='text-align:center;'>Catalog</h3>
+					<br/>
 					<?php
 		
 						print"<div id='container'></div>
@@ -82,7 +84,7 @@
 										$.each(data, function (index, item) {
 											
 												
-											if(count==1||count%5==0){
+											if(count==1||count%4==1){
 												dataHtml+='<div class=\'row justify-content-md-center\'>';
 											}	
 											dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
@@ -102,6 +104,27 @@
 											count++;
 											
 										});
+										if(count%4==3){
+											dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
+											dataHtml+='</div>';
+											dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
+											dataHtml+='</div>';
+											dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
+											dataHtml+='</div>';
+											dataHtml+='</div><br/><br/>';
+										}
+										else if(count%4==2){
+											dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
+											dataHtml+='</div>';
+											dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
+											dataHtml+='</div>';
+											dataHtml+='</div><br/><br/>';
+										}
+										else if(count%4==1){
+											dataHtml+='<div class=\'col-lg-3 col-md-3 col-sm-3 col-xs-3\'>';
+											dataHtml+='</div>';
+											dataHtml+='</div><br/><br/>';
+										}
 										
 										dataHtml+='</ul>';
 										$('#container').html(dataHtml);

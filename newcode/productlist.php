@@ -87,7 +87,7 @@
 											}
 											else{
 												paginationoption.style.display='';
-												dataHtml = '<table><tr><th>No.</th><th>Product Image</th><th>Product Name</th><th>Category</th><th>Price</th><th>Quantity</th><th>Edit</th><th>Delete</th></tr>';
+												dataHtml = '<table><tr><th>No.</th><th>Product Image</th><th>Product Name</th><th>Barcode number</th><th>Category</th><th>Price</th><th>Quantity</th><th>Edit</th><th>Delete</th></tr>';
 												var count;
 												
 												currentpage=pagination.pageNumber;
@@ -105,6 +105,7 @@
 													dataHtml += '<td><img src=\'image/upload/' + item.productImage + '\' height=\'100\' width=\'100\'/></td>';
 													dataHtml += '<td>' + item.productName + '</td>';
 													dataHtml += '<td>' + item.barcodeNumber + '</td>';
+													dataHtml += '<td>' + item.categoryName + '</td>';
 													dataHtml += '<td>' + item.productPrice + '</td>';
 													if(item.productQuantity==0){
 														dataHtml += '<td>Out of Stock</td>';

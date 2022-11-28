@@ -48,7 +48,7 @@
 						
 						<div class='articledetail col-lg-7 col-md-7 col-sm-7 col-xs-7'>
 							<?php
-								if(isset($_POST['submitted'])&&isset($_POST['barcodeNumber'])){
+								if(isset($_POST['submitted'])){
 									
 									$barcodeNumber=$_POST['barcodeNumber'];
 									
@@ -57,6 +57,10 @@
 									mysqli_select_db($dbc,'agilelaptop');
 									if($dbc){
 										
+										
+										$result="DELETE FROM review WHERE barcodeNumber='$barcodeNumber'";
+										if(@mysqli_query($dbc,$result)){
+										}
 										
 										$result="DELETE FROM product WHERE barcodeNumber='$barcodeNumber'";
 										
